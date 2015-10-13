@@ -1,1 +1,1 @@
-# Concrete5-Semantic-UI-Theme
+# Concrete5 Semantic UI Theme
