@@ -8,7 +8,7 @@ $displayThirdColumn = $blocks > 0 || $c->isEditMode();
 
 ?>
 
-<header class="ui grid container">
+<header class="ui stackable grid container">
     <div class="four wide column">
         <?php
         $a = new GlobalArea('Header Site Title');

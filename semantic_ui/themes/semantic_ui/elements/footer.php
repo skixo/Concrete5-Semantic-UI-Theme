@@ -8,65 +8,51 @@ $displayFirstSection = $footerSiteTitleBlocks > 0 || $footerSocialBlocks > 0 || 
 
 ?>
 
-<footer id="footer-theme" class="ui container">
+<footer>
     <?php if ($displayFirstSection) { ?>
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-9">
-                        <?php
-                        $a = new GlobalArea('Footer Site Title');
-                        $a->display();
-                        ?>
-                    </div>
-                    <div class="col-sm-3">
-                        <?php
-                        $a = new GlobalArea('Footer Social');
-                        $a->display();
-                        ?>
-                    </div>
-                </div>
+        <section class="ui stackable grid container">
+            <div class="twelve wide column">
+                <?php
+                $a = new GlobalArea('Footer Site Title');
+                $a->display();
+                ?>
+            </div>
+            <div class="four wide column">
+                <?php
+                $a = new GlobalArea('Footer Social');
+                $a->display();
+                ?>
             </div>
         </section>
     <?php } ?>
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <?php
-                    $a = new GlobalArea('Footer Legal');
-                    $a->display();
-                    ?>
-                </div>
-                <div class="col-sm-3">
-                    <?php
-                    $a = new GlobalArea('Footer Navigation');
-                    $a->display();
-                    ?>
-                </div>
-                <div class="col-sm-3">
-                    <?php
-                    $a = new GlobalArea('Footer Contact');
-                    $a->display();
-                    ?>
-                </div>
-            </div>
+    <section class="ui stackable grid container">
+        <div class="eight wide column">
+            <?php
+            $a = new GlobalArea('Footer Legal');
+            $a->display();
+            ?>
+        </div>
+        <div class="four wide column">
+            <?php
+            $a = new GlobalArea('Footer Navigation');
+            $a->display();
+            ?>
+        </div>
+        <div class="four wide column">
+            <?php
+            $a = new GlobalArea('Footer Contact');
+            $a->display();
+            ?>
+        </div>
+    </section>
+    <section class="ui stackable grid container">
+        <div class="eight wide column">
+            <?php echo t('Built with <a href="http://www.concrete5.org" class="concrete5">concrete5</a> CMS.')?>
+        </div>
+        <div class="eight wide column">
+            <?php echo Core::make('helper/navigation')->getLogInOutLink()?>
         </div>
     </section>
 </footer>
-
-<footer id="concrete5-brand" class="ui container">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <span><?php echo t('Built with <a href="http://www.concrete5.org" class="concrete5">concrete5</a> CMS.')?></span>
-                <span class="pull-right">
-                    <?php echo Core::make('helper/navigation')->getLogInOutLink()?>
-                </span>
-            </div>
-        </div>
-    </div>
-</footer>
-
 
 <?php $this->inc('elements/footer_bottom.php');?>
