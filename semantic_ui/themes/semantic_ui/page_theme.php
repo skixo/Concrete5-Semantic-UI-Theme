@@ -31,11 +31,9 @@ class PageTheme extends Theme
     public function getThemeDefaultBlockTemplates()
     {
         // allows to overwrite default templates
-        /*
         return array(
-            'search' => 'search.php'
+            'autonav' => 'semantic'
         );
-        */
     }
 
     public function getThemeBlockClasses()
