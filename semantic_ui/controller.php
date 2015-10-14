@@ -2,8 +2,10 @@
 
 namespace Concrete\Package\SemanticUi;
 
+use Core;
 use Concrete\Core\Package\Package;
 use Concrete\Core\Page\Theme\Theme;
+use Concrete\Package\SemanticUi\Src\SemanticUiGridFramework;
 
 defined('C5_EXECUTE') or die(_("Access Denied."));
 
@@ -21,6 +23,14 @@ class Controller extends Package
     public function getPackageDescription()
     {
         return t("User Interface is the language of the web");
+    }
+
+    public function on_start()
+    {
+        $manager = Core::make('manager/grid_framework');
+        $manager->extend('semantic_ui', function($app) {
+            return new SemanticUiGridFramework();
+        });
     }
 
     public function install()

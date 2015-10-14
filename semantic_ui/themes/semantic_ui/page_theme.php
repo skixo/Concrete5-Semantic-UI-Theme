@@ -8,7 +8,7 @@ defined('C5_EXECUTE') or die(_("Access Denied."));
 
 class PageTheme extends Theme
 {
-    protected $pThemeGridFrameworkHandle = 'bootstrap3';
+    protected $pThemeGridFrameworkHandle = 'semantic_ui';
 
     public function getThemeName()
     {
