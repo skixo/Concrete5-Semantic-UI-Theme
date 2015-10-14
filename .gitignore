@@ -27,4 +27,4 @@ nbproject
 *.sublime-workspace
 .build*
 .idea
-.prepros
+prepros.cfg
