@@ -8,7 +8,7 @@ $displayFirstSection = $footerSiteTitleBlocks > 0 || $footerSocialBlocks > 0 || 
 
 ?>
 
-<footer id="footer-theme">
+<footer id="footer-theme" class="ui container">
     <?php if ($displayFirstSection) { ?>
         <section>
             <div class="container">
@@ -55,7 +55,7 @@ $displayFirstSection = $footerSiteTitleBlocks > 0 || $footerSocialBlocks > 0 || 
     </section>
 </footer>
 
-<footer id="concrete5-brand">
+<footer id="concrete5-brand" class="ui container">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">

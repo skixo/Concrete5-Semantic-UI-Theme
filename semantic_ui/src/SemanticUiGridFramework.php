@@ -20,7 +20,7 @@ class SemanticUiGridFramework extends GridFramework
 
     public function getPageThemeGridFrameworkRowStartHTML()
     {
-        return '<div class="ui grid">';
+        return '<div class="ui stackable grid">';
     }
 
     public function getPageThemeGridFrameworkRowEndHTML()
@@ -66,6 +66,31 @@ class SemanticUiGridFramework extends GridFramework
         return 'column';
     }
 
-    abstract public function getPageThemeGridFrameworkColumnOffsetClasses();
-    abstract public function getPageThemeGridFrameworkColumnOffsetAdditionalClasses();
+    public function getPageThemeGridFrameworkColumnOffsetClasses()
+    {
+        $offsets = array(
+            'one wide',
+            'two wide',
+            'three wide',
+            'four wide',
+            'five wide',
+            'six wide',
+            'seven wide',
+            'eight wide',
+            'nine wide',
+            'ten wide',
+            'eleven wide',
+            'twelve wide',
+            'thirteen wide',
+            'fourteen wide',
+            'fifteen wide',
+            'sixteen wide',
+        );
+        return $offsets;
+    }
+
+    public function getPageThemeGridFrameworkColumnOffsetAdditionalClasses()
+    {
+        return 'column';
+    }
 }
