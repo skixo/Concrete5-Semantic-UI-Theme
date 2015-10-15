@@ -59,10 +59,12 @@ foreach ($navItems as $ni) {
         $classes[] = 'active';
     }
 
+    /*
     if ($ni->inPath) {
         //class for parent items of the page currently being viewed
-        $classes[] = 'active';
+        $classes[] = 'nav-path-selected';
     }
+    */
 
     /*
     if ($ni->isFirst) {
@@ -78,12 +80,11 @@ foreach ($navItems as $ni) {
     }
     */
 
-    /*
+
     if ($ni->hasSubmenu) {
         //class for items that have dropdown sub-menus
-        $classes[] = 'nav-dropdown';
+        $classes[] = 'ui simple dropdown item';
     }
-    */
 
     /*
     if (!empty($ni->attrClass)) {
@@ -115,15 +116,18 @@ if (count($navItems) > 0) {
     echo '<nav class="ui menu">'; //opens the top-level menu
 
     foreach ($navItems as $ni) {
-
-        echo ''; //opens a nav item
-        echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="item ' . $ni->classes . '">' . $ni->name . '</a>';
-
         if ($ni->hasSubmenu) {
-            echo '<div class="ui dropdown item">'; //opens a dropdown sub-menu
+            echo '<div class="ui simple dropdown item">';
+            echo $ni->name;
+            echo '<div class="menu">';
         } else {
-            echo ''; //closes a nav item
-            echo str_repeat('</div>', $ni->subDepth); //closes dropdown sub-menu(s) and their top-level nav item(s)
+            echo '<a class="item ' . $ni->classes . '" href="' . $ni->url . '">';
+            echo $ni->name;
+        }
+
+        if (!$ni->hasSubmenu) {
+            echo '</a>';
+            echo str_repeat('</div></div>', $ni->subDepth); //closes dropdown sub-menu(s) and their top-level nav item(s)
         }
     }
 
