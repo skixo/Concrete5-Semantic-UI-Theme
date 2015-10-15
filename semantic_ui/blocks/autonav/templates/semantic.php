@@ -59,10 +59,10 @@ foreach ($navItems as $ni) {
         $classes[] = 'active';
     }
 
-    /*
-    if ($ni->inPath) {
+    /* causes menu to always show dropdowns
+    if ($ni->inPath && !$ni->isCurrent) {
         //class for parent items of the page currently being viewed
-        $classes[] = 'nav-path-selected';
+        $classes[] = 'active';
     }
     */
 
@@ -83,7 +83,7 @@ foreach ($navItems as $ni) {
 
     if ($ni->hasSubmenu) {
         //class for items that have dropdown sub-menus
-        $classes[] = 'ui simple dropdown item';
+        $classes[] = 'ui simple dropdown';
     }
 
     /*
@@ -117,11 +117,11 @@ if (count($navItems) > 0) {
 
     foreach ($navItems as $ni) {
         if ($ni->hasSubmenu) {
-            echo '<div class="ui simple dropdown item">';
+            echo '<div class="' . $ni->classes . ' item">';
             echo $ni->name;
             echo '<div class="menu">';
         } else {
-            echo '<a class="item ' . $ni->classes . '" href="' . $ni->url . '">';
+            echo '<a class="' . $ni->classes . ' item" href="' . $ni->url . '">';
             echo $ni->name;
         }
 
