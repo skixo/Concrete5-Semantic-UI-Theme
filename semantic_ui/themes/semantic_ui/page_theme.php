@@ -26,6 +26,7 @@ class PageTheme extends Theme
         $this->requireAsset('css', 'font-awesome');
        	$this->requireAsset('javascript', 'jquery');
         */
+        $this->requireAsset('javascript', 'assets/js/dropdown.min.js');
     }
 
     public function getThemeDefaultBlockTemplates()
