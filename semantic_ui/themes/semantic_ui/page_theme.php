@@ -22,11 +22,11 @@ class PageTheme extends Theme
 
     public function registerAssets()
     {
+        $this->providesAsset('javascript', 'jquery');
         /*
         $this->requireAsset('css', 'font-awesome');
        	$this->requireAsset('javascript', 'jquery');
         */
-        $this->requireAsset('javascript', 'assets/js/dropdown.min.js');
     }
 
     public function getThemeDefaultBlockTemplates()
