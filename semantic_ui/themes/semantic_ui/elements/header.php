@@ -15,7 +15,7 @@ $displayThirdColumn = $blocks > 0 || $c->isEditMode();
         $a->display();
         ?>
     </div>
-    <div class="<?php if ($displayThirdColumn) { ?>eight wide<?php } else { ?>four wide<?php } ?> column">
+    <div class="<?php if ($displayThirdColumn) { ?>eight wide<?php } else { ?>twelve wide<?php } ?> column">
         <?php
         $a = new GlobalArea('Header Navigation');
         $a->display();
